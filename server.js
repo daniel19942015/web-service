@@ -46,6 +46,9 @@ app.post("/update", function(req, res){
     }catch(error){
         console.log("Não foi possível salvar");
     }
+
+    res.set('Content-Type', 'application/json');
+    res.send(JSON.stringify({status: 200, result: "upload realizado com sucesso!"}))
 });
 
 app.listen(port, () => console.log("Connectado", port));
